@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<title>Available Cars for Renting</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Karma">
+<style>
+body, h1, h2, h3, h4, h5, h6 {
+	font-family: "Karma", sans-serif
+}
+
+.w3-bar-block .w3-bar-item {
+	padding: 20px
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script>
+fetch('/cars')
+    .then(res => res.json())
+    .then((out) => {
+        console.log('Output: ', out.length);
+        var mainDiv = document.getElementById("mainDiv");
+        var div = document.createElement("div");
+        div.className = 'w3-row-padding w3-padding-16 w3-center';
+        mainDiv.appendChild(div);
+		var number = 0;
+             for (var i = 0; i < out.length; i++) {
+            	 if (out[i].rented == false){
+					number = number +1;
+            	 }
+				console.log(number);
+				if (number == 5){
+					div = document.createElement("div");
+					div.className = 'w3-row-padding w3-padding-16 w3-center';
+					mainDiv.appendChild(div);
+					number=1;
+             	}
+				var innerHTML ='';
+				if (out[i].rented == false) {
+					innerHTML ='<div class="w3-quarter"> <img src="data:image/png;base64,'+out[i].photo+'" alt="'+out[i].photoAlt+'" style="width: 100%">	<h3>'+out[i].title+'</h3><p>'+out[i].description+'</p> <button type="button"  class="btn btn-outline-success" onClick="openForm('+out[i].id+');"">Rent Me :)</button></div>';					
+				}
+				div.innerHTML = div.innerHTML+ innerHTML;
+        }
+}).catch(err => console.error(err));
+</script>
+<body>
+
+	<!-- Sidebar (hidden by default) -->
+	<nav
+		class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left"
+		style="display: none; z-index: 2; width: 40%; min-width: 300px"
+		id="mySidebar">
+		<a href="javascript:void(0)" onclick="w3_close()"
+			class="w3-bar-item w3-button">Close Menu</a> <a href="/index.html" class="w3-bar-item w3-button">Available Cars</a>
+		<a href="/rentedCars.html" class="w3-bar-item w3-button">Rented
+			Cars</a>
+	</nav>
+
+	<!-- Top menu -->
+	<div class="w3-top">
+		<div class="w3-white w3-xlarge"
+			style="max-width: 1200px; margin: auto">
+			<div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
+			<div class="w3-center w3-padding-16">Available Cars for Renting</div>
+		</div>
+	</div>
+
+	<!-- !PAGE CONTENT! -->
+	<div class="w3-main w3-content w3-padding" id="mainDiv"
+		style="max-width: 1200px; margin-top: 100px">
+
+	
+		</div>
+
+
+		<!-- Footer -->
+		<footer class="w3-row-padding w3-padding-32"> </footer>
+
+		<!-- End page content -->
+	</div>
+	
+	<div class="form-popup" id="myForm">
+  <form action="/cars/updateCar" class="form-container" method="post" id="rentCar">
+    <h1>Car Renting Form</h1>
+
+    <label for="rentedPersonFirstName"><b>First Name</b></label>
+    <input type="text" placeholder="Enter First Name" name="rentedPersonFirstName" required>
+    <input type="hidden" name="id" value=""/>
+    
+    <label for="rentedPersonLastName"><b>Last Name</b></label>
+    <input type="text" placeholder="Enter Last Name" name="rentedPersonLastName" required>
+
+    <label for="rentedPersonContactNumber"><b>Contact Number</b></label>
+    <input type="text" placeholder="Enter Your Cell Number" name="rentedPersonContactNumber" required>
+
+    <label for="rentedPersonContactEmail"><b>Email</b></label>
+    <input type="text" placeholder="Enter Your Email" name="rentedPersonContactEmail" required>
+    
+    <button type="submit" class="btn">Rent the Car</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+	<script>
+		// Script to open and close sidebar
+		function w3_open() {
+			document.getElementById("mySidebar").style.display = "block";
+		}
+
+		function w3_close() {
+			document.getElementById("mySidebar").style.display = "none";
+		}
+	</script>
+<script>
+function openForm(id) {
+  document.getElementsByName("id")[0].value = id;
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+<script type='text/javascript'>
+    $("#rentCar").submit(function(event) {
+     event.preventDefault();
+     var $form = $( this ),
+      url = $form.attr( 'action' );
+       $.postJSON = function(url, data, callback) {
+    	    return jQuery.post({
+    	        'method': 'POST',
+    	        'url': url,
+    	        'contentType': 'application/json',
+    	        'data': JSON.stringify(data),
+    	        'dataType': 'json',
+    	         'mimeType': 'application/json',
+    	        'success': callback
+    	    });
+      };
+      var data = {"id":  document.getElementsByName("id")[0].value, "rentedPersonFirstName":  document.getElementsByName("rentedPersonFirstName")[0].value, "rentedPersonLastName":  document.getElementsByName("rentedPersonLastName")[0].value, "rentedPersonContactNumber":  document.getElementsByName("rentedPersonContactNumber")[0].value, "rentedPersonContactEmail":  document.getElementsByName("rentedPersonContactEmail")[0].value, "rented": "true" };
+      $.postJSON(url, data, function (data, status, xhr) {
+    	  closeForm();
+    	  location.reload();
+      });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+[
+	{
+		"title": "Audi AI Model",
+		"description": "Model 2019, Audi has revealed its AI:Trail concept car - an all-wheel drive with drones for headlights and other features to enhance the passengers enjoyment of the outdoors. The concept vehicle, displayed at last weeks Frankfurt Motor Show, showcases what Audi sees as the future of off-road driving",
+		"isRented": "false",
+		"photo": "static/w3images/audi_ai.jpg",
+		"photoAlt": "Audi AI"
+	},
+	{
+		"title": "Audi A8 Black",
+		"description": "Model 2019, The Audi A8 is a four-door, full-size, luxury sedan manufactured and marketed by the German automaker Audi since 1994.",
+		"isRented": "true",
+		"photo": "static/w3images/Audi8black.jpg",
+		"photoAlt": "A8 Black"
+	},
+	{
+		"title": "Audi Q5",
+		"description": "Model 2019, The Audi Q5 is a series of Compact luxury crossover SUVs produced by the German luxury car manufacturer Audi from 2008.[1] The original first-generation (Typ 8R) model was the third member of the B8 family to be released after the Audi A5 and fourth-generation A4, all being based on the Audi MLB platform. ",
+		"isRented": "false",
+		"photo": "static/w3images/Audiq5.jpg",
+		"photoAlt": "Q5"
+	},
+	{
+		"title": "Audi R8",
+		"description": "Model 2019, The Audi R8[2] is a mid-engine, 2-seater sports car,[2][3] which uses Audis trademark quattro permanent all-wheel drive system.[2] It was introduced by the German car manufacturer Audi AG in 2006",
+		"isRented": "false",
+		"photo": "static/w3images/audir8.jpg",
+		"photoAlt": "R8"
+	},
+	{
+		"title": "Audi I8",
+		"description": "Model 2019, Model 2019, The Audi A8 is a four-door, full-size, luxury sedan manufactured and marketed by the German automaker Audi since 1994.",
+		"isRented": "false",
+		"photo": "static/w3images/auudi8.jpg",
+		"photoAlt": "R8"
+	},
+	{
+		"title": "Audi Etron",
+		"description": "Model 2020, Audi presents the first fully electric production vehicle - the Audi e-tron. This turns Audis well-known e-tron technology into a series. Personal space, a powerful driving experience and self-determined mobility: no contradiction with the all-electric SUV from Audi. No matter whether you are travelling in the city or heading off to go sailing with friends - the Audi e-tron is suitable for everyday use and a faithful companion.",
+		"isRented": "false",
+		"photo": "static/w3images/etron.jpg",
+		"photoAlt": "Etron"
+	},
+	{
+		"title": "The Perfect Green Audi :)",
+		"description": "Model 2019, Audi AG is a German automobile manufacturer that designs, engineers, produces, markets and distributes luxury vehicles. Audi is a member of the Volkswagen Group and has its roots at Ingolstadt, Bavaria, Germany. Audi-branded vehicles are produced in nine production facilities worldwide.",
+		"isRented": "false",
+		"photo": "static/w3images/green_audi.jpg",
+		"photoAlt": "Green Audi"
+	},
+	{
+		"title": "Super Purple Audi :)",
+		"description": "Model 2019, Audi AG is a German automobile manufacturer that designs, engineers, produces, markets and distributes luxury vehicles. Audi is a member of the Volkswagen Group and has its roots at Ingolstadt, Bavaria, Germany. Audi-branded vehicles are produced in nine production facilities worldwide.",
+		"isRented": "false",
+		"photo": "static/w3images/purple.jpg",
+		"photoAlt": "Purple Audi"
+	},
+	{
+		"title": "Elegant Red Audi :)",
+		"description": "Model 2019, Audi AG is a German automobile manufacturer that designs, engineers, produces, markets and distributes luxury vehicles. Audi is a member of the Volkswagen Group and has its roots at Ingolstadt, Bavaria, Germany. Audi-branded vehicles are produced in nine production facilities worldwide.",
+		"isRented": "false",
+		"photo": "static/w3images/red.jpg",
+		"photoAlt": "Red Audi"
+	},
+	{
+		"title": "Sport Audi",
+		"description": "Model 2019, Audi AG is a German automobile manufacturer that designs, engineers, produces, markets and distributes luxury vehicles. Audi is a member of the Volkswagen Group and has its roots at Ingolstadt, Bavaria, Germany. Audi-branded vehicles are produced in nine production facilities worldwide.",
+		"isRented": "false",
+		"photo": "static/w3images/sportif.jpg",
+		"photoAlt": "Sportif Audi"
+	},
+	{
+		"title": "The Wow Audi :)",
+		"description": "Model 2019, Audi AG is a German automobile manufacturer that designs, engineers, produces, markets and distributes luxury vehicles. Audi is a member of the Volkswagen Group and has its roots at Ingolstadt, Bavaria, Germany. Audi-branded vehicles are produced in nine production facilities worldwide.",
+		"isRented": "false",
+		"photo": "static/w3images/wow.jpg",
+		"photoAlt": "A Real Wow Audi :)"
+	}
+]
